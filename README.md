@@ -74,4 +74,35 @@ Always consult a certified medical practitioner for serious health concerns.
 
 ## This project is licensed under the MIT License.
 
+# Example Commands Sagicious Understands
+
+Sagicious works best when you type your medical questions in natural language.
+Here are some examples of queries you can ask:
+
+Symptoms & Causes
+
+## “What are the symptoms of malaria?”
+
+## “Causes of typhoid fever”
+
+## “How does COVID-19 spread?”
+
+## Prevention & Treatment
+
+## “How to prevent cholera?”
+
+## “First aid for snake bite”
+
+## “Treatment options for flu”
+
+# General Health
+
+## “What is diabetes?”
+
+## “Healthy diet tips for high blood pressure”
+
+## “How much water should I drink daily?”
+
+# These are just examples. Sagicious is flexible and can handle many health-related queries.
+
 # Sagicious – Your trusted AI medical companion, just a question away!
