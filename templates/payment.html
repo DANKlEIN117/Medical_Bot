@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Payment | Medical Consultant AI</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #3a8dde, #6dd5ed);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .payment-box {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            width: 320px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #3a8dde;
+        }
+
+        select,
+        button {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        button {
+            background: #3a8dde;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #2e77c7;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="payment-box">
+        <h2>💳 Choose Your Plan</h2>
+        <form method="POST">
+            <select name="plan" required>
+                <option value="Free">Free - Limited access</option>
+                <option value="Basic">Basic - $5/month</option>
+                <option value="Premium">Premium - $10/month</option>
+            </select><br>
+            <button type="submit">Pay</button>
+        </form>
+    </div>
+</body>
+
+</html>

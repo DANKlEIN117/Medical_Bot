@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Success</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #e6f7ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .box {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: green;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            background: #3a8dde;
+            padding: 10px 20px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h2>✅ Payment Successful!</h2>
+        <p>Thank you {{ username }}, you are now on the <b>{{ plan }}</b> plan.</p>
+        <a href="{{ url_for('home') }}">Go to Chat</a>
+    </div>
+</body>
+
+</html>

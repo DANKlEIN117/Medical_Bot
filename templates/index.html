@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Consultant AI</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #3a8dde, #6dd5ed);
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+        }
+
+        .chat-container {
+            background: #fff;
+            width: 400px;
+            max-width: 90%;
+            height: 400px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .header {
+            background: #3a8dde;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logout {
+            color: white;
+            text-decoration: none;
+            background: #ff4d4d;
+            padding: 5px 10px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            transition: 0.2s;
+        }
+
+        .logout:hover {
+            background: #cc0000;
+        }
+
+        .messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background: #f7f9fc;
+        }
+
+        .message {
+            margin: 8px 0;
+            padding: 10px 15px;
+            border-radius: 15px;
+            max-width: 80%;
+            line-height: 1.4;
+        }
+
+        .user {
+            background: #3a8dde;
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 0;
+        }
+
+        .bot {
+            background: #e0e0e0;
+            align-self: flex-start;
+            border-bottom-left-radius: 0;
+        }
+
+        .input-area {
+            display: flex;
+            border-top: 1px solid #ddd;
+            padding: 10px;
+            background: #fff;
+        }
+
+        .input-area input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 10px 12px;
+            border-radius: 10px;
+            background: #f0f0f0;
+            margin-right: 10px;
+            font-size: 0.95rem;
+        }
+
+        .input-area button {
+            background: #3a8dde;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .input-area button:hover {
+            background: #2e77c7;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to Medical AI, you doctor at need<br> 
+        Ready to chat you through your medics and solutions.
+    </h1>
+    <div class="chat-container">
+        <div class="header">
+            <span>🩺 Medical Consultant AI — Welcome, {{ username }} 👋 ({{ plan }} User)</span>
+            <a href="{{ url_for('logout') }}" class="logout">Logout</a>
+        </div>
+        <div class="messages" id="messages"></div>
+        <div class="input-area">
+            <input type="text" id="question" placeholder="Ask a medical question..." />
+            <button onclick="ask()">Send</button>
+        </div>
+    </div>
+    
+
+    <script>
+        async function ask() {
+            let question = document.getElementById("question").value.trim();
+            if (!question) return;
+
+            let msgBox = document.getElementById("messages");
+            let userMsg = document.createElement("div");
+            userMsg.classList.add("message", "user");
+            userMsg.innerText = question;
+            msgBox.appendChild(userMsg);
+
+            let response = await fetch("/ask", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ question })
+            });
+
+            let data = await response.json();
+            let botMsg = document.createElement("div");
+            botMsg.classList.add("message", "bot");
+            botMsg.innerText = data.answer;
+            msgBox.appendChild(botMsg);
+
+            document.getElementById("question").value = "";
+            msgBox.scrollTop = msgBox.scrollHeight;
+        }
+    </script>
+</body>
+
+</html>
