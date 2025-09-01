@@ -35,7 +35,7 @@ Always consult a certified medical practitioner for serious health concerns.
 
 ##Clone the repo:
 
-###git clone https://github.com/DANKIEIN117/Medical_Bot.git
+###git clone [https://github.com/DANKIEIN117/Medical_Bot.git](https://github.com/DANKlEIN117/Medical_Bot.git)
 ###cd Medical_Bot
 
 
