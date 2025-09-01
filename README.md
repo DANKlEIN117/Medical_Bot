@@ -33,45 +33,45 @@ Always consult a certified medical practitioner for serious health concerns.
 
 # Installation (Local Dev)
 
-##Clone the repo:
+## Clone the repo:
 
-###git clone [https://github.com/DANKIEIN117/Medical_Bot.git](https://github.com/DANKlEIN117/Medical_Bot.git)
-###cd Medical_Bot
-
-
-##Create a virtual environment & activate:
-
-###python -m venv venv
-###source venv/bin/activate   # Linux/Mac
-###venv\Scripts\activate      # Windows
+### git clone [https://github.com/DANKIEIN117/Medical_Bot.git](https://github.com/DANKlEIN117/Medical_Bot.git)
+### cd Medical_Bot
 
 
-##Install dependencies:
+## Create a virtual environment & activate:
 
-###pip install -r requirements.txt
+### python -m venv venv
+### source venv/bin/activate   # Linux/Mac
+### venv\Scripts\activate      # Windows
 
 
-###Run Flask dev server:
+## Install dependencies:
 
-###python AI.py
+### pip install -r requirements.txt
+
+
+### Run Flask dev server:
+
+### python AI.py
 
 # Deployment (Render)
 
-##Render automatically installs requirements and runs:
+## Render automatically installs requirements and runs:
 
-###gunicorn AI:app
+### gunicorn AI:app
 
 
-##After deployment, your app will be live at:
+## After deployment, your app will be live at:
 
-###https://medical-bot-2-frc5.onrender.com
+### https://medical-bot-2-frc5.onrender.com
 
-#Contributing
+# Contributing
 
-##Pull requests are welcome! For major changes, please open an issue first to discuss what you’d like to change.
+## Pull requests are welcome! For major changes, please open an issue first to discuss what you’d like to change.
 
-#License
+# License
 
-##This project is licensed under the MIT License.
+## This project is licensed under the MIT License.
 
-#Sagicious – Your trusted AI medical companion, just a question away!
+# Sagicious – Your trusted AI medical companion, just a question away!
